@@ -1,0 +1,30 @@
+services:
+  auth-service:
+    image: auth-service
+    container_name: auth-service
+    build:
+      context: ./authservice
+      dockerfile: dockerfile
+    networks:
+      - imageGallery
+    ports:
+      - "4000:4000"
+    restart: unless-stopped
+    env_file:
+      - authservice/.env
+
+  frontend:
+    image: frontend
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: dockerfile
+    networks:
+      - imageGallery
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+networks:
+  imageGallery:
+    driver: bridge

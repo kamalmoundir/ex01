@@ -1,0 +1,123 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding: 1em;
+  background: #222;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header input {
+  flex: 1;
+  padding: 0.5rem;
+}
+
+button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #ff7b00;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-info img {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+main {
+  flex: 1;
+  padding: 1rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1em;
+  padding: 1em;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.gallery img:active,
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+#loginBtn {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  border-radius: 5px;
+  border: none;
+  background: #007aff;
+  color: #fff;
+  cursor: pointer;
+}
+
+#searchInput {
+  width: 90%;
+  max-width: 400px;
+  padding: 0.5em;
+  font-size: 1em;
+  margin: 1em 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+@media (max-width: 600px) {
+  header {
+    font-size: 1em;
+    padding: 0.5em;
+  }
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.5em;
+    padding: 0.5em;
+  }
+  #searchInput {
+    font-size: 0.9em;
+    padding: 0.4em;
+  }
+}
+
+.photo-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.liked-label {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: linear-gradient(90deg, #ff7b00, #ffb347);
+  color: #fff;
+  padding: 0.3em 0.7em;
+  border-radius: 12px;
+  font-size: 0.9em;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  pointer-events: none;
+  z-index: 2;
+}

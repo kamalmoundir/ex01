@@ -1,0 +1,14 @@
+{
+  "name": "authservice",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "dotenv": "^17.2.3",
+     "jsonwebtoken": "^9.0.2"
+  }
+}
